@@ -16,6 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+<<<<<<< HEAD
+from EditoraDinamica import views
+from django.urls.conf import include
+urlpatterns = [
+#    path('admin/', admin.site.urls),
+    path('',views.home, name='homepage'),
+    path("perfis/", include('perfis.urls'))
+=======
 from . import views
 from django.urls.conf import include
 
@@ -23,6 +31,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("livros/", include ('VersoLivro.urls')),
     path('',views.home, name='index'),
+>>>>>>> 43004903ab93d0a20e48a6e193f11ca9235391c4
 ]
 
 
