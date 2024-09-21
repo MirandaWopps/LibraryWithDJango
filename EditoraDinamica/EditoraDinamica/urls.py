@@ -25,3 +25,5 @@ urlpatterns = [
     path('',views.home, name='index'),
 ]
 
+
+
