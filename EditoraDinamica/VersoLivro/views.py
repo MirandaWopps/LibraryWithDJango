@@ -4,4 +4,4 @@ from django.views.generic.base import View
 # Create your views here.
 
 def home(request): 
-    return render(request,'VersoLivro/home.html')
+    return render(request,'VersoLivro/index.html')
