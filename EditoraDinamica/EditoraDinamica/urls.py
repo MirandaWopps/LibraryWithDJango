@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 from django.urls.conf import include
+from VersoLivro.views import livro
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("livros/", include ('VersoLivro.urls')),
     path('',views.home, name='index'),
+
 ]
 
 

@@ -1,11 +1,15 @@
 from django.shortcuts import render
 #from django.http import HttpResponse
-# Create your views here.
-#def home(request):
-  # processamento abaixo antes de mostrar a home page
+
+from VersoLivro.models import Livro
+
 
 # Create your views here.
 def home(request):
-# processamento antes de mostrar a home page
-    return render(request, 'EditoraDinamica/index.html')
+    livros = Livro.objects.all()
+
+    capa = livros.values_list('capa')
+    livros_dict = {'capa': capa}
+    
+    return render(request, 'EditoraDinamica/index.html', livros_dict)
 

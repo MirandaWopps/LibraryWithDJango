@@ -9,12 +9,12 @@ class Pessoa(models.Model):
     } 
 
     id = models.AutoField(primary_key=True)
-    
     nome = models.CharField(max_length=100, help_text='nome')
-
     email = models.EmailField(help_text='Informe o email', max_length=70)
-
     tpUser = models.CharField(max_length=1, choices=TIPO_USUARIO)
+
+    def __str__(self):
+        return self.nome
     
 
 

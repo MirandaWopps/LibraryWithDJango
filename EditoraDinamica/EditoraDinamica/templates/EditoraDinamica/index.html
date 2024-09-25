@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EditoraDinamica</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/EditoraDinamica/title.css' %}">
-    <script src="{% static 'js/EditoraDinamica/carousel.js' %}"></script>
 </head>
     <body>
         <div class="base-container">
@@ -17,18 +16,18 @@
                 <h3> Login | Cadastro <h3>
             </div>
         </div>
-
-
-
+        {% block body %}
         <div class="carousel-container">
             <button class="prev-btn">‹</button>
             <div class="carousel">
-                <img class="book-cover" alt="suntzu book image" src="{% static 'img/EditoraDinamica/suntzu.jpg' %}">
-                <img class="book-cover" alt="musashi book image" src="{% static 'img/EditoraDinamica/musashi.jpg' %}">
-                <!-- Adicione mais imagens de capas de livros aqui -->
+                {% for livro in livros.capa_set.all %}
+                <a href="{% url 'livros' livro.id %}"><img class="book-cover" alt="book image" src="{% static 'img/VersoLivro/livro.url' %}"></a>
+                {% endfor %}
             </div>
             <button class="next-btn">›</button>
         </div>
+        {% endblock %}
+        
     
         
 

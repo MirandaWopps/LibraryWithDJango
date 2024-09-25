@@ -1,0 +1,10 @@
+.book-cover {
+    max-width: 200px;
+    margin-right: 15px;
+    transition: transform 0.3s;
+}
+
+/* Hover effect to enlarge the covers slightly */
+.book-cover:hover {
+    transform: scale(1.1);
+}
